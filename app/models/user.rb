@@ -6,6 +6,12 @@ class User < ApplicationRecord
 
   validates :phone, uniqueness: true
 
+  ROLES = %i[user patient doctor admin].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
+
   def email_required?
     false
   end
