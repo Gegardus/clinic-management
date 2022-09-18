@@ -53,7 +53,7 @@
 - Put the project on Heroku and the code on GitHub.
 - Send a link + access to the admin part and the public part.
 
-* Bellow Russion Translation
+#### Bellow Russian Translation
 
 # Тестовое задание для RoR dev
 
