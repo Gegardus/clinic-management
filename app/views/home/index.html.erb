@@ -1,7 +1,8 @@
 <div class="container-fluid d-flex flex-column align-items-center">
 <h1>Healthcare Center</h1>
         <% if current_user %>
-          <p>Hello, your authorization number is <%= current_user.phone%> !</p> 
+        <p>Hello, <%= current_user.first_name%>!</p> 
+          <p>Your authorization number is <%= current_user.phone%>.</p> 
           <p>You are [<%= current_user.role%>] </p>
         <% if current_user.is? :admin %>  
           <p> Hello boss! </p>
