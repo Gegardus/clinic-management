@@ -1,0 +1,34 @@
+<div class="container">
+  <h2 class="form-header">Create your profile</h2> 
+ 
+
+<%= form_with model: @profile do |form| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this user from being created:</h2>
+      <ul>
+        <% @profile.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.label :doctor_id %>
+  <%= form.text_field :doctor_id, :value => "" %> 
+   <%= form.label :patient_id %>
+  <%= form.text_field :patient_id, :value => "" %> 
+   <%= form.label :admin_id %>
+  <%= form.text_field :admin_id, :value => "" %> 
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name, :value => "" %> 
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name, :value => "" %> 
+  <%= form.label :profileable_type  %>
+  <%= form.text_field :profileable_type, :value => "" %>
+
+  
+  <%= form.submit "Submit" %>
+<% end %>
+
+</div>
