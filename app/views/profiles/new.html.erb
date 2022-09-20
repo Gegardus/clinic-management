@@ -15,19 +15,16 @@
   <% end %>
 
   <%= form.label :doctor_id %>
-  <%= form.text_field :doctor_id, :value => "" %> 
+  <%= form.text_field :doctor_id, :value => "doc_id" %> 
    <%= form.label :patient_id %>
-  <%= form.text_field :patient_id, :value => "" %> 
+  <%= form.text_field :patient_id, :value => "pat_id" %> 
    <%= form.label :admin_id %>
-  <%= form.text_field :admin_id, :value => "" %> 
+  <%= form.text_field :admin_id, :value => "admin_id" %> 
   <%= form.label :first_name %>
   <%= form.text_field :first_name, :value => "" %> 
   <%= form.label :last_name %>
   <%= form.text_field :last_name, :value => "" %> 
-  <%= form.label :profileable_type  %>
-  <%= form.text_field :profileable_type, :value => "" %>
-
-  
+   
   <%= form.submit "Submit" %>
 <% end %>
 
