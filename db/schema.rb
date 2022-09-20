@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_19_050810) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_19_124628) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,9 +55,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_19_050810) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "profileable_type"
+    t.bigint "profileable_id"
     t.index ["admin_id"], name: "index_profiles_on_admin_id"
     t.index ["doctor_id"], name: "index_profiles_on_doctor_id"
     t.index ["patient_id"], name: "index_profiles_on_patient_id"
+    t.index ["profileable_type", "profileable_id"], name: "index_profiles_on_profileable"
   end
 
   create_table "users", force: :cascade do |t|
