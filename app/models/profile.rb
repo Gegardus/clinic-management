@@ -1,5 +1,3 @@
 class Profile < ApplicationRecord 
-  belongs_to :profileable, polymorphic: true   
-  ROLES = %i[user patient doctor admin].freeze
-
+  belongs_to :profileable, polymorphic: true  
 end
