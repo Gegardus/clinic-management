@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_19_124628) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_21_083159) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_19_124628) do
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.bigint "doctor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_categories_on_doctor_id"
+  end
+
   create_table "doctors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -48,18 +56,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_19_124628) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.bigint "doctor_id", null: false
-    t.bigint "patient_id", null: false
-    t.bigint "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
     t.string "profileable_type"
     t.bigint "profileable_id"
-    t.index ["admin_id"], name: "index_profiles_on_admin_id"
-    t.index ["doctor_id"], name: "index_profiles_on_doctor_id"
-    t.index ["patient_id"], name: "index_profiles_on_patient_id"
     t.index ["profileable_type", "profileable_id"], name: "index_profiles_on_profileable"
   end
 
@@ -80,7 +82,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_19_124628) do
 
   add_foreign_key "appointments", "doctors"
   add_foreign_key "appointments", "patients"
-  add_foreign_key "profiles", "admins"
-  add_foreign_key "profiles", "doctors"
-  add_foreign_key "profiles", "patients"
+  add_foreign_key "categories", "doctors"
 end
