@@ -1,5 +1,13 @@
 class ProfilesController < ApplicationController
 
+  def index
+    @profiles = Profile.all
+  end
+
+  def show 
+    @profile = Profile.find(params[:id])
+  end
+
   def new
     @profile = Profile.new
   end
@@ -31,7 +39,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :patient_id, :doctor_id, :admin_id)
+    params.require(:profile).permit(:first_name, :last_name, :patient_id, :doctor_id, :admin_id, :profileable_type, :profileable_id)
   end
 end
-
