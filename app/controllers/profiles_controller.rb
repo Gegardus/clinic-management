@@ -39,6 +39,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :patient_id, :doctor_id, :admin_id, :profileable_type, :profileable_id)
+    params.require(:profile).permit(:first_name, :last_name, :profileable_type, :profileable_id)
   end
 end
+

@@ -14,21 +14,18 @@
     </div>
   <% end %>
 
-  <%= form.label :doctor_id %>
-  <%= form.text_field :doctor_id, :value => "ID" %> 
-  <%= form.label :patient_id %>
-  <%= form.text_field :patient_id, :value => "ID" %> 
-  <%= form.label :admin_id %>
-  <%= form.text_field :admin_id, :value => "ID" %> 
+
   <%= form.label :first_name %>
   <%= form.text_field :first_name, :value => "" %> 
   <%= form.label :last_name %>
   <%= form.text_field :last_name, :value => "" %> 
-  <%= form.label :profileable_type  %>
-  <%= form.text_field :profileable_type, :value => "Type" %>
-  <%= form.label :profileable_id  %>
-  <%= form.text_field :profileable_id, :value => "ID" %>  
+
+  <%= form.label :status  %>
+  <%= form.text_field :profileable_type, :value => "" %>
+  <%= form.label :status_number  %>
+  <%= form.text_field :profileable_id, :value => "" %>  
   <%= form.submit "Submit" %>
 <% end %>
 
 </div>
+
