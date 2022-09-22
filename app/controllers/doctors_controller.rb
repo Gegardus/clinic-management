@@ -5,6 +5,8 @@ class DoctorsController < ApplicationController
 
   def show
     @doctor = Doctor.find(params[:id])
+    @appointment = Appointment.find(params[:id])
+    @patient = Patient.find(params[:id])
   end
 
   def create
@@ -16,8 +18,8 @@ class DoctorsController < ApplicationController
     end
   end
 
-  private 
-  
+  private
+
   def allowed_params
     params.require(:doctor).permit(:doctor_id, profiles_attributes: [:first_name])
   end

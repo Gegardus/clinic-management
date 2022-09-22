@@ -1,2 +1,9 @@
 <h1>Doctors#show</h1>
-<p>Find me in app/views/doctors/show.html.erb</p>
+
+<section class="card">
+  <p> Appointment by <%= @doctor.first_name %></p>
+  <p> To <%= @patient.first_name %></p>
+  <div class="card">   
+    <p><%= @appointment.description %></p>    
+  </div> 
+</section>
