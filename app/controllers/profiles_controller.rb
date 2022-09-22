@@ -1,10 +1,9 @@
 class ProfilesController < ApplicationController
-
   def index
     @profiles = Profile.all
   end
 
-  def show 
+  def show
     @profile = Profile.find(params[:id])
   end
 
@@ -13,7 +12,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-      @profile = Profile.new(profile_params)
+    @profile = Profile.new(profile_params)
 
     if @profile.save
       redirect_to new_profile_path
@@ -42,4 +41,3 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:first_name, :last_name, :profileable_type, :profileable_id)
   end
 end
-

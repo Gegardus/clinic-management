@@ -1,0 +1,9 @@
+<section>
+  <h1 class="">Add a new appointment</h1>
+  <%= form_with model: @appointment, url: appointments_path, class: "card left" do |form| %>
+    <%= form.label :text %> <br>
+    <%= form.text_area :text , cols: 20, rows: 15 %> <br>
+    <%= form.submit "Submit", class: "btn" %>
+  <% end %>
+</section>
+

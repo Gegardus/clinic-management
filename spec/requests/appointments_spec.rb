@@ -1,30 +1,37 @@
 require 'rails_helper'
 
-RSpec.describe 'Doctors', type: :request do
+RSpec.describe 'Appointments', type: :request do
   describe 'GET /index' do
     it 'returns http success' do
-      get '/doctors/index'
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET /new' do
-    it 'returns http success' do
-      get '/doctors/new'
+      get '/appointments/index'
       expect(response).to have_http_status(:success)
     end
   end
 
   describe 'GET /show' do
     it 'returns http success' do
-      get '/doctors/show'
+      get '/appointments/show'
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'GET /edit' do
+  describe 'GET /new' do
     it 'returns http success' do
-      get '/doctors/edit'
+      get '/appointments/new'
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'GET /create' do
+    it 'returns http success' do
+      get '/appointments/create'
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'GET /destroy' do
+    it 'returns http success' do
+      get '/appointments/destroy'
       expect(response).to have_http_status(:success)
     end
   end

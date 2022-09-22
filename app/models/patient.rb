@@ -1,8 +1,8 @@
-class Patient < ApplicationRecord
+class Patient < User
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable
 
   has_many :appointments
   has_many :doctors, through: :appointments
-  has_one :profile, :as => :profileable
+  has_one :profile, as: :profileable
 end
